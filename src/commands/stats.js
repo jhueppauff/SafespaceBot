@@ -1,11 +1,11 @@
-const { RichEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 // Make sure to export properties
 module.exports = {
     name: 'stats', // Command name (what's gonna be used to call the command)
 
     execute(client, message) {
         // Construct info embed
-        const embed = new RichEmbed()
+        const embed = new MessageEmbed()
             .setTitle('About')
             .setColor('RANDOM')
             .setDescription('Stats about this bot')
