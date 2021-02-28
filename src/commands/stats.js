@@ -12,7 +12,7 @@ module.exports = {
             .addField('Created', client.user.createdAt)
             .addField('Heap Usage', `${Math.round(process.memoryUsage().heapUsed / 1048576)}mb`, true) // 1048576 = size of an mb in bytes
             .addField('Uptime', formatTime(process.uptime()), true)
-            .setFooter('Discord Example Bot', client.user.displayAvatarURL);
+            .setFooter('Discord Safespace Bot', client.user.displayAvatarURL);
         // Send message
         message.channel.send({ embed });
     }

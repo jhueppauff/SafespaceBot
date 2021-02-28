@@ -22,11 +22,10 @@ module.exports = {
         // Make sure the voice channel is actually defined (aka, they're inside a voice channel).
         if (!voiceChannel) return message.reply('You must be in a voice channel first.');
 
-        const channel = message.member.voice.channel;
         message.guild.members.cache.forEach(member => {
             //guard clause, early return
-            if (member.id === message.member.id || !member.voice.channel) return;
-            member.voice.setChannel(channel);
+            if (member.id === message.member.id || !member.voice.voiceChannel) return;
+            member.voice.setChannel(voiceChannel);
         });
 
         // We now know the voice channel is defiend, so let's join them.
