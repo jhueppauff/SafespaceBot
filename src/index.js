@@ -2,6 +2,7 @@ const { Client, Collection } = require("discord.js");
 const config = require("./config.json");
 const path = require('path');
 const glob = require('glob');
+const { exit } = require("process");
 
 const client = new Client();
 
@@ -89,4 +90,11 @@ client.on('ready', () => {
     console.log('Bot is ready...');
 });
 
-client.login(config.BOT_TOKEN);
+if (config.BOT_TOKEN && config.BOT_TOKEN != '' && config.BOT_TOKEN != 'token') {
+    client.login(config.BOT_TOKEN);
+} else if (process.env.BOT_TOKEN && process.env.BOT_TOKEN != "") {
+    client.login(process.env.BOT_TOKEN);
+} else {
+    console.log("No authentication token present")
+    exit();
+}
