@@ -94,6 +94,11 @@ client.on('ready', () => {
   console.log('Bot is ready...');
 });
 
+process.on('SIGTERM', () => {
+  console.info('SIGTERM signal received.');
+  client.destroy();
+});
+
 if (config.BOT_TOKEN && config.BOT_TOKEN != '' && config.BOT_TOKEN != 'token') {
   client.login(config.BOT_TOKEN);
 } else if (process.env.BOT_TOKEN && process.env.BOT_TOKEN != '') {
