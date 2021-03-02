@@ -15,28 +15,13 @@ module.exports = {
         `${Math.round(process.memoryUsage().heapUsed / 1048576)}mb`,
         true,
       ) // 1048576 = size of an mb in bytes
-      .addField('Uptime', formatTime(process.uptime()), true)
+      .addField(
+        'Uptime',
+        new Date(process.uptime() * 1000).toISOString().slice(11, 19),
+        true,
+      )
       .setFooter('Safespace Bot', client.user.displayAvatarURL);
     // Send message
     message.channel.send({ embed });
   },
 };
-
-function formatTime(milliseconds) {
-  const sec_num = parseInt(milliseconds, 10);
-  let hours = Math.floor(sec_num / 3600);
-  let minutes = Math.floor((sec_num - hours * 3600) / 60);
-  let seconds = sec_num - hours * 3600 - minutes * 60;
-
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
-  }
-  const time = `${hours}:${minutes}:${seconds}`;
-  return time;
-}
