@@ -116,3 +116,6 @@ dist
 .pnp.*
 
 src/config.json
+
+
+src/commands/temp/*.wav

@@ -1,3 +1,7 @@
 {
-    "BOT_TOKEN": ""
+    "BOT_TOKEN": "",
+    "COGNITIVE_SERVICES_APIKEY": "",
+    "COGNITIVE_SERVICES_ENDPOINT": "https://cog-discordbot-prod-we-001.cognitiveservices.azure.com/",
+    "COGNITIVE_SERVICES_LANGUAGE": "de-de",
+    "COGNITIVE_SERVICES_REGION": "westeurope"
 }
