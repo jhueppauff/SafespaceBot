@@ -5,10 +5,10 @@ const { promises } = require("dns");
 
 function synthesizeSpeech(text, output, language, voiceName) {
     let speechConfig;
-    if (configuration.CognitiveServicesApiKey && configuration.CognitiveServicesApiKey != '' && configuration.CognitiveServicesApiKey != 'token') {
-        speechConfig = sdk.SpeechConfig.fromSubscription(configuration.CognitiveServicesApiKey, configuration.CognitiveServicesRegion);
-    } else if (process.env.CognitiveServicesApiKey && process.env.CognitiveServicesApiKey != "") {
-        speechConfig = sdk.SpeechConfig.fromSubscription(process.env.CognitiveServicesApiKey, process.env.CognitiveServicesRegion);
+    if (configuration.COGNITIVE_SERVICES_APIKEY && configuration.COGNITIVE_SERVICES_APIKEY != '' && configuration.COGNITIVE_SERVICES_APIKEY != 'token') {
+        speechConfig = sdk.SpeechConfig.fromSubscription(configuration.COGNITIVE_SERVICES_APIKEY, configuration.COGNITIVE_SERVICES_REGION);
+    } else if (process.env.COGNITIVE_SERVICES_APIKEY && process.env.COGNITIVE_SERVICES_APIKEY != "") {
+        speechConfig = sdk.SpeechConfig.fromSubscription(process.env.COGNITIVE_SERVICES_APIKEY, process.env.COGNITIVE_SERVICES_REGION);
     } else {
         console.log("No authentication token present")
         return;
