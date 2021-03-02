@@ -1,6 +1,6 @@
 module.exports = {
   name: 'echo',
-  aliase: ['say', 'repeat'],
+  aliases: ['say', 'repeat'],
 
   execute(client, message, args) {
     // Send a message with the text the user entered after the command.

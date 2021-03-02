@@ -1,6 +1,6 @@
 module.exports = {
   name: 'ping',
-  aliase: ['latency'],
+  aliases: ['latency'],
 
   execute(client, message) {
     const timeTaken = Date.now() - message.createdTimestamp;
