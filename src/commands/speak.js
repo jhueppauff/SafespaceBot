@@ -81,7 +81,7 @@ module.exports = {
             return null;
         }
 
-        let text = args.slice(2)
+        let text = args.slice(2);
         await synthesizeSpeech(text.join(' '), 'speak.wav', 'de-DE', 'de-DE-ConradNeural');
 
         // Command start
