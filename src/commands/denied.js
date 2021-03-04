@@ -28,13 +28,6 @@ module.exports = {
         if (!voiceChannel)
             return message.reply('You must be in a voice channel first.');
 
-        const { channel } = message.member.voice;
-        message.guild.members.cache.forEach((member) => {
-            // guard clause, early return
-            if (member.id === message.member.id || !member.voice.channel) return;
-            member.voice.setChannel(channel);
-        });
-
         // We now know the voice channel is defiend, so let's join them.
         // We also store the connection returned from joining the voice channel.
         const connection = await voiceChannel.join();
