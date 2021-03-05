@@ -35,7 +35,7 @@ module.exports = {
         // We can use the connection to play the file.
         const dispatcher = await connection.play(
             path.join(__dirname, '../assets/denied.mp3'), {
-                volume: 0.8,
+                volume: 0.6,
             },
         );
 
